@@ -1,26 +1,18 @@
 console.log('Hello World!');
 
-function saludar(nombre){
-    return `Hola ${nombre}`
+import frutas, {verduras} from './data/frutas';
+//import frutas from './data/frutas';
+
+console.log(verduras)
+
+const getFrutasById = (id)=>{
+    return frutas.find((fruta)=>fruta.id === id)
 }
 
-console.log(saludar('Juan'))
+console.log(getFrutasById(2))
 
-const saludar1 = function(nombre){
-    return `Hola mi nombre es: ${nombre}`
+const getFrutasByOwner = (color) =>{
+    return frutas.filter((fruta)=>fruta.color === color)
 }
-console.log(saludar1('Pepe'))
 
-const saludar2 = (nombre) => {
-    return `Hola mi nombre es: ${nombre}`
-}
-console.log(saludar2('Paco'))
-
-const saludar3 = (nombre) => `Hola mi nombre es: ${nombre}`
-console.log(saludar3('Luis'))
-
-export const main = () => {
-    return (
-        <div>main</div>
-    )
-}
+console.log(getFrutasByOwner('Rojo'))
